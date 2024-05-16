@@ -1,0 +1,14 @@
+@use "@/styles/colors" as *;
+@use "@/styles/typography" as *;
+
+.container {
+  background-color: $header-gray-color;
+  width: 100%;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
+}
+
+.round {
+  @include setFont(12px, 500, 12px);
+  text-align: left;
+}

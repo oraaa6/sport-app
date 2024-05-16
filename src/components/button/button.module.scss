@@ -1,0 +1,51 @@
+@use "@/styles/colors" as *;
+@use "@/styles/typography" as *;
+
+.button,
+.link {
+  border-radius: 8px;
+  @include setFont(16px, 500, 16px);
+  transition: all 0.3s linear;
+
+  &.light {
+    height: 40px;
+    padding: 9.5px;
+    background-color: transparent;
+    border: 1.5px solid $border-gray-color;
+    &:hover {
+      border-color: $icons-and-border-color;
+    }
+  }
+  &.dark {
+    background-color: $dark-button-color;
+    border: none;
+    color: $white-color;
+    padding: 16px 20px;
+
+    &:hover {
+      background-color: $dark-button-color-hover;
+    }
+  }
+  &.withoutBorder {
+    border: none;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: $dark-button-color-hover;
+  }
+}
+
+.buttonWithIconContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
