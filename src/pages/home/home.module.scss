@@ -2,6 +2,23 @@
 @use "@/styles/typography" as *;
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttonBottomContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  @include setFont(18px, 500, 18px);
+  color: $gray-color;
+  border: 2px solid red;
+}
+
+.tableContainer {
   border-radius: 16px;
   box-shadow: 0px 12px 27px 0px #5b77861a, 0px 49px 49px 0px #5b778617,
     0px 111px 67px 0px #5b77860d, 0px 197px 79px 0px #5b778603,
@@ -10,7 +27,7 @@
   flex-direction: column;
 }
 
-.buttonContainer {
+.buttonTopContainer {
   padding: 16px;
   display: flex;
   justify-content: flex-start;
@@ -43,4 +60,12 @@
 
 .resultsContainer {
   padding: 0 15px;
+  position: relative;
+}
+
+.spinner {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate((-50%, -50%));
 }

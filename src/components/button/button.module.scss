@@ -29,11 +29,19 @@
   &.withoutBorder {
     border: none;
   }
+  &.left .buttonWithIconContainer {
+    flex-direction: row-reverse;
+  }
+  &:disabled {
+    opacity: 0.2;
+  }
 }
 
 .link {
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s linear;
+
   &:hover {
     color: $dark-button-color-hover;
   }
@@ -43,6 +51,11 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: $dark-button-color-hover;
+  }
 }
 
 .icon {

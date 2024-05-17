@@ -8,17 +8,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "light" | "dark";
   withoutBorder?: boolean;
   icon?: string;
+  iconPosition?: "left" | "right";
   href?: string;
 }
 
 export function Button({
   children,
   icon,
+  iconPosition = "right",
   variant = "light",
   withoutBorder,
   href,
   ...props
 }: ButtonProps) {
+  const { className } = props;
+
   const renderContent = () =>
     icon ? (
       <div className={styles.buttonWithIconContainer}>
@@ -43,7 +47,9 @@ export function Button({
       className={clsx(
         styles.button,
         styles[variant],
-        withoutBorder && styles.withoutBorder
+        withoutBorder && styles.withoutBorder,
+        styles[iconPosition],
+        className
       )}
     >
       {renderContent()}

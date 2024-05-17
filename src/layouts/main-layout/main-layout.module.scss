@@ -1,0 +1,9 @@
+@use "@/styles/colors" as *;
+
+.link {
+  height: 70px;
+  background-color: $white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
