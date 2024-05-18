@@ -1,8 +1,9 @@
 import { Button } from "../button/button";
 import { Team } from "../team/team";
 import styles from "./round-row.module.scss";
-import Monitor from "@/assets/icons/monitor.svg";
-import Arrow from "@/assets/icons/arrow-right-circle.svg";
+
+import Monitor from "@/assets/icons/monitor.svg?react";
+import Arrow from "@/assets/icons/arrow-right-circle.svg?react";
 
 type TeamData = { image: string; name: string; score?: number };
 type RoundRowProps = {
@@ -25,9 +26,9 @@ export function RoundRow({ date, homeTeam, awayTeam }: RoundRowProps) {
       </div>
       <div className={styles.detailsContainer}>
         <Button>
-          <img src={Monitor} alt="monitor-button" />
+          <Monitor />
         </Button>
-        <Button icon={Arrow}>Szczegóły</Button>
+        <Button Icon={Arrow}>Szczegóły</Button>
       </div>
     </div>
   );

@@ -1,16 +1,10 @@
-import SpinnerImage from "@/assets/icons/spinner.svg";
+import SpinnerImage from "@/assets/icons/spinner.svg?react";
+import clsx from "clsx";
+import styles from "./spinner.module.scss";
 
 type SpinnerProps = {
   className: string;
 };
 export function Spinner({ className }: SpinnerProps) {
-  return (
-    <img
-      src={SpinnerImage}
-      className={className}
-      alt="loading-spinner"
-      width={100}
-      height={100}
-    />
-  );
+  return <SpinnerImage className={clsx(styles.spinner, styles[className])} />;
 }

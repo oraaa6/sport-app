@@ -19,7 +19,7 @@ export const routes: RouteObject[] = [
         ),
       },
       {
-        path: "/table",
+        path: "/tabela",
         element: (
           <MainLayout>
             <Table />

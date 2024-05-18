@@ -8,4 +8,5 @@ export const ReactQueryKeys = {
     orderDirection,
     orderBy,
   ],
+  TABLE: () => ["table"],
 } as const;

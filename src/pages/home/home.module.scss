@@ -14,8 +14,7 @@
 
 .button {
   @include setFont(18px, 500, 18px);
-  color: $gray-color;
-  border: 2px solid red;
+  color: $gray-color; //sprawdz to
 }
 
 .tableContainer {
@@ -35,31 +34,20 @@
   width: 100%;
 }
 
-.titleContainer {
-  padding: 16px;
+.headerContainer {
+  background-color: $header-gray-color;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
 }
 
-.leaugeName {
-  @include setFont(20px, 500, 20px);
-}
-
-.leaugeContainer {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.flag {
-  width: 24px;
-  height: 16px;
+.round {
+  @include setFont(12px, 500, 12px);
+  text-align: left;
 }
 
 .resultsContainer {
-  padding: 0 15px;
+  padding: 15px;
   position: relative;
 }
 
@@ -68,4 +56,8 @@
   left: 50%;
   top: 50%;
   transform: translate((-50%, -50%));
+}
+
+:export {
+  iconColor: $icons-and-border-color;
 }

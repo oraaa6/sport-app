@@ -1,0 +1,26 @@
+@use "@/styles/typography" as *;
+@use "@/styles/colors" as *;
+
+.container {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-gray-color;
+}
+
+.leaugeName {
+  @include setFont(20px, 500, 20px);
+}
+
+.leaugeContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flag {
+  width: 24px;
+  height: 16px;
+}

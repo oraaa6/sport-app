@@ -7,14 +7,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "light" | "dark";
   withoutBorder?: boolean;
-  icon?: string;
+  Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   iconPosition?: "left" | "right";
   href?: string;
 }
 
 export function Button({
   children,
-  icon,
+  Icon,
   iconPosition = "right",
   variant = "light",
   withoutBorder,
@@ -24,10 +24,10 @@ export function Button({
   const { className } = props;
 
   const renderContent = () =>
-    icon ? (
+    Icon ? (
       <div className={styles.buttonWithIconContainer}>
         <span>{children}</span>
-        <img className={styles.icon} src={icon} alt="icon" />
+        <Icon className={styles.icon} />
       </div>
     ) : (
       children

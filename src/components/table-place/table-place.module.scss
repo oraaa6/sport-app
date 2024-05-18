@@ -1,0 +1,34 @@
+@use "@/styles/typography" as *;
+@use "@/styles/colors" as *;
+
+.tablePlace {
+  @include setFont(14px, 700, 24px);
+  color: $white-color;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  text-align: center;
+  &.european.increase {
+    background-color: $european-increase-color;
+  }
+  &.european.decrease {
+    background-color: $european-decrease-color;
+  }
+
+  &.champions.increase {
+    background-color: $champions-increase-color;
+  }
+  &.champions.decrease {
+    background-color: $champions-decrease-color;
+  }
+
+  &.championship.increase {
+    background-color: $championship-increase-color;
+  }
+  &.championship.decrease {
+    background-color: $championship-decrease-color;
+  }
+  &.constant {
+    background-color: $constant-color;
+  }
+}

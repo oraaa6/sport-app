@@ -1,0 +1,36 @@
+@use "@/styles/typography" as *;
+@use "@/styles/colors" as *;
+
+.link {
+  @include setFont(16px, 500, 16px);
+  text-decoration: none;
+  color: $black-color;
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: $dark-button-color-hover;
+  }
+}
+
+.backgroundContainer {
+  width: 100%;
+  padding: 0 20px;
+  background-color: $breadcrumb-background-color;
+}
+
+.breadcrumbs {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 0;
+  gap: 16px;
+}
+
+.lastPath {
+  @include setFont(16px, 500, 16px);
+  color: $current-path-color;
+}
+
+:export {
+  iconColor: $black-color;
+}

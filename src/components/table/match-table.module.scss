@@ -1,0 +1,100 @@
+@use "@/styles/typography" as *;
+@use "@/styles/colors" as *;
+
+th {
+  text-align: left;
+}
+
+.table {
+  width: 97%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.teamContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  & .team {
+    @include setFont(14px, 500, 14px);
+  }
+  & .image {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.header {
+  background-color: $header-gray-color;
+  width: 100%;
+  border-radius: 4px;
+
+  & th {
+    @include setFont(12px, 500, 12px);
+    padding: 8px 0;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+      padding-left: 10px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+td {
+  padding: 16px 0;
+  border-bottom: 1px solid $border-gray-color;
+  @include setFont(14px, 500, 14px);
+
+  &:first-child {
+    padding-left: 15px;
+  }
+}
+
+.tableContainer {
+  border-radius: 16px;
+  box-shadow: 0px 12px 27px 0px #5b77861a, 0px 49px 49px 0px #5b778617,
+    0px 111px 67px 0px #5b77860d, 0px 197px 79px 0px #5b778603,
+    0px 308px 86px 0px #5b778600;
+  display: flex;
+  flex-direction: column;
+}
+
+tr {
+  padding: 0 15px;
+}
+
+.square {
+  min-width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.description {
+  @include setFont(12px, 400, 12px);
+}
+
+.legendContainer {
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+}
+
+:export {
+  europeanIncrease: $european-increase-color;
+  europeanDecrease: $european-decrease-color;
+  championsIncrease: $champions-increase-color;
+  championsDecrease: $champions-decrease-color;
+  championshipIncrease: $championship-increase-color;
+  championshipDecrease: $championship-decrease-color;
+}

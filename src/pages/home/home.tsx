@@ -1,16 +1,14 @@
-import { HeaderRound } from "@/components/header-round/header-round";
 import { RoundRow } from "@/components/round-row/round-row";
 import styles from "./home.module.scss";
 import { Button } from "@/components/button/button";
-import Flag from "@/assets/images/eng.png";
-import Arrow from "@/assets/icons/arrow-right-circle.svg";
 import { useGames } from "@/hooks/use-games";
 import { Fragment } from "react/jsx-runtime";
-import ArrowRight from "@/assets/icons/chevron-right.svg";
-import ArrowLeft from "@/assets/icons/chevron-left.svg";
+import ArrowRight from "@/assets/icons/chevron-right.svg?react";
+import ArrowLeft from "@/assets/icons/chevron-left.svg?react";
 import { GameParams } from "@/services/games/games.service.types";
 import { useState } from "react";
 import { Spinner } from "@/components/spinner/spinner";
+import { LeagueHeader } from "@/components/leauge-header/leauge-header";
 
 export function Home() {
   const ON_PAGE = 5;
@@ -41,15 +39,7 @@ export function Home() {
             Wszystkie
           </Button>
         </div>
-        <div className={styles.titleContainer}>
-          <div className={styles.leaugeContainer}>
-            <img className={styles.flag} src={Flag} alt="flag" />
-            <p className={styles.leaugeName}>Anglia: Premier League</p>
-          </div>
-          <Button href="/table" icon={Arrow}>
-            Tabela
-          </Button>
-        </div>
+        <LeagueHeader linkDescription="Tabela" linkHref="/tabela" />
         <div className={styles.resultsContainer}>
           {isLoading && <Spinner className={styles.spinner} />}
           {games?.data?.map(
@@ -67,7 +57,9 @@ export function Home() {
             ) => (
               <Fragment key={id}>
                 {(index === 0 || round !== games.data[index - 1].round) && (
-                  <HeaderRound roundNumber={round} />
+                  <div className={styles.headerContainer}>
+                    <p className={styles.round}>{`RUNDA ${round}`}</p>
+                  </div>
                 )}
                 <RoundRow
                   date={date}
@@ -91,7 +83,7 @@ export function Home() {
         <Button
           iconPosition="left"
           className={styles.button}
-          icon={ArrowLeft}
+          Icon={() => <ArrowLeft stroke={styles.iconColor} />}
           withoutBorder
           onClick={() =>
             setParams((prev) => ({ ...prev, page: prev.page - 1 }))
@@ -103,7 +95,7 @@ export function Home() {
         <Button
           iconPosition="right"
           className={styles.button}
-          icon={ArrowRight}
+          Icon={() => <ArrowRight stroke={styles.iconColor} />}
           withoutBorder
           onClick={() =>
             setParams((prev) => ({
