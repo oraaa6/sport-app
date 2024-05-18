@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./breadcrumb.module.scss";
 import ArrowRight from "@/assets/icons/chevron-right.svg?react";
+import { capitalizeWords } from "./breadcrumb.utils";
+import { Fragment } from "react/jsx-runtime";
 
 export function Breadcrumb() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((path) => path);
-  let breadcrumbPath = "";
 
   if (!pathnames.length) {
     return;
@@ -19,20 +20,19 @@ export function Breadcrumb() {
         </Link>
 
         {pathnames.map((name, index) => {
-          breadcrumbPath += `/${name}`;
           const isLast = index === pathnames.length - 1;
-
           return isLast ? (
-            <>
+            <Fragment key={name}>
               <ArrowRight stroke={styles.iconColor} />
-              <p className={styles.lastPath}>
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-              </p>
-            </>
+              <p className={styles.lastPath}>{capitalizeWords(name)}</p>
+            </Fragment>
           ) : (
-            <Link className={styles.link} to={breadcrumbPath}>
-              {name.charAt(0).toUpperCase() + name.slice(1)}
-            </Link>
+            <Fragment key={name}>
+              <ArrowRight stroke={styles.iconColor} />
+              <Link className={styles.link} to={`/${name}`}>
+                {capitalizeWords(name)}
+              </Link>
+            </Fragment>
           );
         })}
       </div>

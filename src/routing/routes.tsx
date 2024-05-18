@@ -3,6 +3,7 @@ import App from "../App";
 import { Home } from "../pages/home/home";
 import { Table } from "../pages/table/table";
 import { MainLayout } from "@/layouts/main-layout/main-layout";
+import { Teams } from "@/pages/teams/teams";
 
 export const routes: RouteObject[] = [
   {
@@ -23,6 +24,14 @@ export const routes: RouteObject[] = [
         element: (
           <MainLayout>
             <Table />
+          </MainLayout>
+        ),
+      },
+      {
+        path: "/zespoly",
+        element: (
+          <MainLayout>
+            <Teams />
           </MainLayout>
         ),
       },

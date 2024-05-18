@@ -9,4 +9,5 @@ export const ReactQueryKeys = {
     orderBy,
   ],
   TABLE: () => ["table"],
+  TEAMS: () => ["teams"],
 } as const;

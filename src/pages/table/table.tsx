@@ -1,4 +1,4 @@
-import { MatchTable } from "@/components/table/match-table";
+import { MatchTable } from "@/components/match-table/match-table";
 import { useTable } from "@/hooks/use-table";
 
 export function Table() {

@@ -14,7 +14,7 @@
 
 .button {
   @include setFont(18px, 500, 18px);
-  color: $gray-color; //sprawdz to
+  color: $gray-color;
 }
 
 .tableContainer {
@@ -29,9 +29,11 @@
 .buttonTopContainer {
   padding: 16px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid $border-gray-color;
   width: 100%;
+  gap: 20px;
 }
 
 .headerContainer {

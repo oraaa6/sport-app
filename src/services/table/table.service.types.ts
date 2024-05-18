@@ -1,11 +1,7 @@
+import { Team } from "../teams/teams.service.types";
+
 export type TableTeam = {
-  team: {
-    id: number;
-    name: string;
-    image: string;
-    created_at: string;
-    updated_at: string;
-  };
+  team: Team;
   points: number;
   goals_scored: number;
   goals_conceded: number;

@@ -4,7 +4,7 @@ import { Trend } from "../table-place/table-place";
 import { GeneratedRowsData } from "./match-table.types";
 
 export const generateRowsData = (
-  tableData: TableResponse
+  tableData?: TableResponse
 ): GeneratedRowsData[] => {
   if (!tableData) {
     return [];

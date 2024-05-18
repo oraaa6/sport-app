@@ -1,0 +1,29 @@
+@use "@/styles/typography" as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.teamContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-width: 120px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  gap: 20px;
+}
+
+.image {
+  width: 100%;
+  max-width: 100px;
+}
+
+.name {
+  @include setFont(18px, 700, 18px);
+}

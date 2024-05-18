@@ -1,10 +1,10 @@
-import styles from "./team.module.scss";
+import styles from "./team-cell.module.scss";
 
-type TeamProps = {
+type TeamCellProps = {
   name: string;
   image: string;
 };
-export function Team({ name, image }: TeamProps) {
+export function TeamCell({ name, image }: TeamCellProps) {
   return (
     <div className={styles.teamContainer}>
       <img width={16} height={16} src={image} alt={`${name}-image`} />

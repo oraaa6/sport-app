@@ -51,7 +51,7 @@ export function MatchTable({ tableData }: MatchTableProps) {
       </table>
       <div className={styles.legendContainer}>
         {LEGEND.map(({ description, color }) => (
-          <div className={styles.legend}>
+          <div key={description} className={styles.legend}>
             <div className={styles.square} style={{ backgroundColor: color }} />
             <p className={styles.description}>{description}</p>
           </div>

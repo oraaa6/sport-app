@@ -1,5 +1,5 @@
 import { Button } from "../button/button";
-import { Team } from "../team/team";
+import { TeamCell } from "../team-cell/team-cell";
 import styles from "./round-row.module.scss";
 
 import Monitor from "@/assets/icons/monitor.svg?react";
@@ -17,8 +17,8 @@ export function RoundRow({ date, homeTeam, awayTeam }: RoundRowProps) {
     <div className={styles.container}>
       <p className={styles.date}>{date}</p>
       <div className={styles.teamsContainer}>
-        <Team name={homeTeam.name} image={homeTeam.image} />
-        <Team name={awayTeam.name} image={awayTeam.image} />
+        <TeamCell name={homeTeam.name} image={homeTeam.image} />
+        <TeamCell name={awayTeam.name} image={awayTeam.image} />
       </div>
       <div className={styles.scoreContainer}>
         <p className={styles.score}>{homeTeam.score}</p>
