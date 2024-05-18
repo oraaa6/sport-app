@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb/breadcrumb";
 import { PageContainer } from "@/components/page-container/page-container";
 
 export type MainLayoutProps = {
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 export function MainLayout({ children }: MainLayoutProps) {
@@ -15,9 +15,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <Link className={styles.link} to="/">
         <img src={Logo} alt="logo" />
       </Link>
-
       <Breadcrumb />
-
       <PageContainer>{children}</PageContainer>
     </div>
   );

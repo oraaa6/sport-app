@@ -4,6 +4,7 @@ type TeamCellProps = {
   name: string;
   image: string;
 };
+
 export function TeamCell({ name, image }: TeamCellProps) {
   return (
     <div className={styles.teamContainer}>

@@ -1,8 +1,12 @@
 @use "@/styles/typography" as *;
 @use "@/styles/colors" as *;
+@use "@/styles/mixins" as *;
 
-th {
-  text-align: left;
+.tableContainer {
+  @include table-shadow;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .table {
@@ -10,19 +14,23 @@ th {
   border-collapse: collapse;
   margin: 0 auto;
   margin-top: 15px;
-}
 
-.teamContainer {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-
-  & .team {
-    @include setFont(14px, 500, 14px);
+  th {
+    text-align: left;
   }
-  & .image {
-    width: 25px;
-    height: 25px;
+
+  td {
+    padding: 16px 0;
+    border-bottom: 1px solid $border-gray-color;
+    @include setFont(14px, 500, 14px);
+
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+
+  tr {
+    padding: 0 15px;
   }
 }
 
@@ -39,44 +47,26 @@ th {
       border-radius: 4px 0 0 4px;
       padding-left: 10px;
     }
+
     &:last-child {
       border-radius: 0 4px 4px 0;
     }
   }
 }
 
-td {
-  padding: 16px 0;
-  border-bottom: 1px solid $border-gray-color;
-  @include setFont(14px, 500, 14px);
-
-  &:first-child {
-    padding-left: 15px;
-  }
-}
-
-.tableContainer {
-  border-radius: 16px;
-  box-shadow: 0px 12px 27px 0px #5b77861a, 0px 49px 49px 0px #5b778617,
-    0px 111px 67px 0px #5b77860d, 0px 197px 79px 0px #5b778603,
-    0px 308px 86px 0px #5b778600;
+.teamContainer {
   display: flex;
-  flex-direction: column;
-  position: relative;
-}
+  gap: 8px;
+  align-items: center;
 
-tr {
-  padding: 0 15px;
-}
+  & .team {
+    @include setFont(14px, 500, 14px);
+  }
 
-.square {
-  min-width: 16px;
-  height: 16px;
-  border-radius: 4px;
-}
-
-.description {
-  @include setFont(12px, 400, 12px);
+  & .image {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .legendContainer {
@@ -89,6 +79,16 @@ tr {
 .legend {
   display: flex;
   gap: 10px;
+}
+
+.square {
+  min-width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.description {
+  @include setFont(12px, 400, 12px);
 }
 
 :export {

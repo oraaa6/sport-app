@@ -11,6 +11,7 @@ import { RoundRow } from "../round-row/round-row";
 import ArrowRight from "@/assets/icons/chevron-right.svg?react";
 import ArrowLeft from "@/assets/icons/chevron-left.svg?react";
 import Arrow from "@/assets/icons/arrow-right-circle.svg?react";
+import { ON_PAGE_DEFAULT } from "./round-table.constans";
 
 type RoundTableProps = {
   onParamsChange: (value: GameParams) => void;
@@ -25,8 +26,6 @@ export function RoundTable({
   isLoading,
   games,
 }: RoundTableProps) {
-  const ON_PAGE = 5;
-
   return (
     <div className={styles.container}>
       <div className={styles.tableContainer}>
@@ -37,7 +36,7 @@ export function RoundTable({
               onParamsChange({
                 ...params,
                 page: 1,
-                onPage: games?.total || ON_PAGE,
+                onPage: games?.total || ON_PAGE_DEFAULT,
               });
             }}
           >
@@ -66,7 +65,9 @@ export function RoundTable({
               <Fragment key={id}>
                 {(index === 0 || round !== games.data[index - 1].round) && (
                   <div className={styles.headerContainer}>
-                    <p className={styles.round}>{`RUNDA ${round}`}</p>
+                    <p className={styles.round}>
+                      {`runda ${round}`.toUpperCase()}
+                    </p>
                   </div>
                 )}
                 <RoundRow

@@ -1,11 +1,10 @@
 import { Button } from "../button/button";
 import { TeamCell } from "../team-cell/team-cell";
 import styles from "./round-row.module.scss";
-
 import Monitor from "@/assets/icons/monitor.svg?react";
 import Arrow from "@/assets/icons/arrow-right-circle.svg?react";
+import { TeamData } from "./round-row.types";
 
-type TeamData = { image: string; name: string; score?: number };
 type RoundRowProps = {
   date: string;
   homeTeam: TeamData;

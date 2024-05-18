@@ -1,17 +1,6 @@
 @use "@/styles/typography" as *;
 @use "@/styles/colors" as *;
 
-.link {
-  @include setFont(16px, 500, 16px);
-  text-decoration: none;
-  color: $black-color;
-  transition: all 0.3s linear;
-
-  &:hover {
-    color: $dark-button-color-hover;
-  }
-}
-
 .backgroundContainer {
   width: 100%;
   padding: 0 20px;
@@ -24,6 +13,17 @@
   display: flex;
   padding: 10px 0;
   gap: 16px;
+}
+
+.link {
+  @include setFont(16px, 500, 16px);
+  text-decoration: none;
+  color: $black-color;
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: $dark-button-color-hover;
+  }
 }
 
 .lastPath {

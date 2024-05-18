@@ -12,10 +12,12 @@
     padding: 9.5px;
     background-color: transparent;
     border: 1.5px solid $border-gray-color;
+
     &:hover {
       border-color: $icons-and-border-color;
     }
   }
+
   &.dark {
     background-color: $dark-button-color;
     border: none;
@@ -26,12 +28,15 @@
       background-color: $dark-button-color-hover;
     }
   }
+
   &.withoutBorder {
     border: none;
   }
+
   &.left .buttonWithIconContainer {
     flex-direction: row-reverse;
   }
+
   &:disabled {
     opacity: 0.2;
   }
@@ -40,7 +45,7 @@
 .link {
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s linear;
+  transition: color 0.3s linear;
 
   &:hover {
     color: $dark-button-color-hover;
@@ -51,7 +56,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  transition: all 0.3s linear;
+  transition: color 0.3s linear;
 
   &:hover {
     color: $dark-button-color-hover;

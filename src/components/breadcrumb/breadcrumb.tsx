@@ -18,7 +18,6 @@ export function Breadcrumb() {
         <Link className={styles.link} to="/">
           Piłka nożna
         </Link>
-
         {pathnames.map((name, index) => {
           const isLast = index === pathnames.length - 1;
           return isLast ? (

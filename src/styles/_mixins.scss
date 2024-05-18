@@ -1,0 +1,6 @@
+@mixin table-shadow {
+  box-shadow: 0px 12px 27px 0px #5b77861a, 0px 49px 49px 0px #5b778617,
+    0px 111px 67px 0px #5b77860d, 0px 197px 79px 0px #5b778603,
+    0px 308px 86px 0px #5b778600;
+  border-radius: 16px;
+}

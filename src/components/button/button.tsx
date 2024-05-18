@@ -23,7 +23,7 @@ export function Button({
 }: ButtonProps) {
   const { className } = props;
 
-  const renderContent = () =>
+  const renderButtonContent = () =>
     Icon ? (
       <div className={styles.buttonWithIconContainer}>
         <span>{children}</span>
@@ -36,7 +36,7 @@ export function Button({
   if (href && !props.disabled) {
     return (
       <Link to={href} className={styles.link}>
-        {renderContent()}
+        {renderButtonContent()}
       </Link>
     );
   }
@@ -52,7 +52,7 @@ export function Button({
         className
       )}
     >
-      {renderContent()}
+      {renderButtonContent()}
     </button>
   );
 }

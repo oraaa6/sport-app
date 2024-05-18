@@ -4,5 +4,5 @@ import { useTable } from "@/hooks/use-table";
 export function Table() {
   const { tableData } = useTable();
 
-  return <MatchTable tableData={tableData || []} />;
+  return <MatchTable tableData={tableData} />;
 }

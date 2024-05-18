@@ -1,9 +1,3 @@
-export type Team = {
-  id: number;
-  name: string;
-  image: string;
-  created_at: string;
-  updated_at: string;
-};
+import { Team } from "../games/games.service.types";
 
 export type TeamsResponse = Team[];

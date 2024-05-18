@@ -7,11 +7,12 @@ type LeagueHeaderProps = {
   linkDescription: string;
   linkHref: string;
 };
+
 export function LeagueHeader({ linkDescription, linkHref }: LeagueHeaderProps) {
   return (
     <div className={styles.container}>
       <div className={styles.leaugeContainer}>
-        <img className={styles.flag} src={Flag} alt="flag" />
+        <img className={styles.flag} src={Flag} alt="eng-flag" />
         <p className={styles.leaugeName}>Anglia: Premier League</p>
       </div>
       <Button href={linkHref} Icon={Arrow}>

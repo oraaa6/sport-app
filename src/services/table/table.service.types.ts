@@ -1,4 +1,4 @@
-import { Team } from "../teams/teams.service.types";
+import { Team } from "../games/games.service.types";
 
 export type TableTeam = {
   team: Team;

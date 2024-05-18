@@ -3,10 +3,12 @@ import { getTable } from "@/services/table/table.service";
 import { useQuery } from "@tanstack/react-query";
 
 export function useTable() {
-  const { data: tableData } = useQuery({
+  const { data } = useQuery({
     queryKey: ReactQueryKeys.TABLE(),
     queryFn: () => getTable(),
   });
+
+  const tableData = data || [];
 
   return { tableData };
 }

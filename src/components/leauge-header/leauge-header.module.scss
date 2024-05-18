@@ -10,14 +10,14 @@
   border-bottom: 1px solid $border-gray-color;
 }
 
-.leaugeName {
-  @include setFont(20px, 500, 20px);
-}
-
 .leaugeContainer {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.leaugeName {
+  @include setFont(20px, 500, 20px);
 }
 
 .flag {
